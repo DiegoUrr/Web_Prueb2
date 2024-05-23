@@ -1,7 +1,7 @@
 $(document).ready(function() {
     let cart = [];
 
-    // Añadir producto al carrito
+   
     $('.add-to-cart').click(function() {
         const product = $(this).closest('.card');
         const productName = product.find('.card-title').text();
@@ -23,7 +23,7 @@ $(document).ready(function() {
         alert('Producto añadido al carrito');
     });
 
-    // Actualizar la vista del carrito
+
     function updateCart() {
         $('#cart-items').empty();
         let total = 0;
@@ -45,12 +45,11 @@ $(document).ready(function() {
         $('#cart-total').text(total.toLocaleString());
     }
 
-    // Actualizar el contador del carrito
+
     function updateCartCount() {
         $('#cart-count').text(cart.length);
     }
 
-    // Eliminar producto del carrito
     $(document).on('click', '.remove-from-cart', function() {
         const index = $(this).data('index');
         cart.splice(index, 1);
@@ -58,13 +57,12 @@ $(document).ready(function() {
         updateCartCount();
     });
 
-    // Proceder al pago
     $('#checkout').click(function() {
         if (cart.length === 0) {
             alert('El carrito está vacío.');
         } else {
             alert('Procediendo al pago...');
-            // Aquí puedes agregar la lógica para el proceso de pago.
+
         }
     });
     function updateCart() {
